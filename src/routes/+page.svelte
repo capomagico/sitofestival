@@ -6,7 +6,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<a class="parallax-container" href="https://www.firewatchgame.com">
+<div class="parallax-container">
 	{#each layers as layer}
 		<img
 			style="transform: translate(0,{(-y * layer) / (layers.length - 1)}px)"
@@ -14,7 +14,7 @@
 			alt="parallax layer {layer}"
 		/>
 	{/each}
-</a>
+</div>
 
 <div class="text">
 	<span style="opacity: {1 - Math.max(0, y / 40)}"> scroll down </span>
@@ -71,6 +71,7 @@
 		position: absolute;
 		top: 711px;
 		left: 0;
+		margin-top: -30px;
 		width: 100%;
 		height: calc(100% - 712px);
 		background-color: rgb(32, 0, 1);
